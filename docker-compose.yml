@@ -1,0 +1,36 @@
+version: '3.9'
+services:
+
+  postgresql-b:
+    image: postgres:12.5
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+
+
+  postgresql-b1:
+    image: postgres:12.5
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+
+
+  postgresql-b2:
+    image: postgres:12.5
+    ports:
+      - "5434:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+
+  sharding:
+    image: sharding:latest
+    ports:
+      - "8080:8080"
